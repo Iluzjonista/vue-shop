@@ -1,0 +1,104 @@
+[
+    {
+      "invId": 1,
+      "name": "Leica M10-P",
+      "image": "./assets/images/camera-1",
+      "price": 6900,
+      "liked": false,
+      "detail": "<p>This is description of a product</p>",
+      "categories": [
+        "camera"
+      ]
+    },
+    {
+        "invId": 2,
+        "name": "Leica SL2",
+        "image": "./assets/images/camera-2",
+        "price": 5300,
+        "liked": false,
+        "detail": "<p>This is description of a product</p>",
+        "categories": [
+          "camera"
+        ]
+      },    {
+        "invId": 3,
+        "name": "Leica M10-P ASC 100 Edition",
+        "image": "./assets/images/camera-3",
+        "price": 16250,
+        "liked": false,
+        "detail": "<p>This is description of a product</p>",
+        "categories": [
+          "camera"
+        ]
+      },    {
+        "invId": 4,
+        "name": "Leica V-lux 5",
+        "image": "./assets/images/camera-4",
+        "price": 1050,
+        "liked": false,
+        "detail": "<p>This is description of a product</p>",
+        "categories": [
+          "camera"
+        ]
+      },    {
+        "invId": 5,
+        "name": "Leica Q2",
+        "image": "./assets/images/camera-5",
+        "price": 9000000,
+        "liked": false,
+        "detail": "<p>This is description of a product</p>",
+        "categories": [
+          "camera"
+        ]
+      },    {
+        "invId": 6,
+        "name": "Leica CL 100 years Bauhaus",
+        "image": "./assets/images/camera-6",
+        "price": 3300,
+        "liked": false,
+        "detail": "<p>This is description of a product</p>",
+        "categories": [
+          "camera"
+        ]
+      },    {
+        "invId": 7,
+        "name": "Summicron-m 50mm",
+        "image": "./assets/images/lens-1",
+        "price": 9000000,
+        "liked": false,
+        "detail": "<p>This is description of a product</p>",
+        "categories": [
+          "lens"
+        ]
+      },    {
+        "invId": 8,
+        "name": "Apo-Summicron-m 50mm",
+        "image": "./assets/images/lens-2",
+        "price": 8100,
+        "liked": false,
+        "detail": "<p>This is description of a product</p>",
+        "categories": [
+          "lens"
+        ]
+      },    {
+        "invId": 9,
+        "name": "Summaron-m",
+        "image": "./assets/images/lens-3",
+        "price": 2600,
+        "liked": false,
+        "detail": "<p>This is description of a product</p>",
+        "categories": [
+          "lens"
+        ]
+      },    {
+        "invId": 10,
+        "name": "Lens hood with Cap",
+        "image": "./assets/images/acc-1",
+        "price": 120,
+        "liked": false,
+        "detail": "<p>This is description of a product</p>",
+        "categories": [
+          "accessories"
+        ]
+      }
+  ]
