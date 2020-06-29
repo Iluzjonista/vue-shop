@@ -3,11 +3,13 @@ import App from './App.vue'
 import store from './store'
 
 import Toasted from 'vue-toasted';
+import VueRouter from 'vue-router'
 
+Vue.use(VueRouter)
 Vue.use(Toasted, {
     duration: 1000
 })
-/* eslint-disable no-new */
+
 new Vue({
     el: '#app',
     store,

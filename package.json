@@ -2,7 +2,7 @@
   "name": "vue-online-store",
   "description": "",
   "version": "1.0.0",
-  "author": "Adam Ukla}ski",
+  "author": "Adam Uklanski",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
@@ -10,21 +10,22 @@
   },
   "dependencies": {
     "bootstrap-vue": "^2.15.0",
-    "vue": "^2.4.4",
+    "vue": "^2.6.11",
+    "vue-router": "^3.3.4",
     "vue-toasted": "^1.1.28",
     "vue-toastr": "^2.1.2",
-    "vuex": "^2.4.1"
+    "vuex": "^2.5.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.6.0",
-    "cross-env": "^5.0.5",
-    "css-loader": "^0.28.7",
-    "file-loader": "^1.1.4",
-    "vue-loader": "^13.0.5",
+    "cross-env": "^5.2.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "vue-loader": "^13.7.3",
     "vue-template-compiler": "^2.4.4",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1"
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.11.5"
   }
 }

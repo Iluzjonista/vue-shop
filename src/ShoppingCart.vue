@@ -48,7 +48,8 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" data-dismiss="modal">Keep shopping</button>
-                        <button class="btn btn-primary" data-dismiss="modal">Check out</button>
+
+                        <router-link :to="'/cart'"><button class="btn btn-primary" data-dismiss="modal">Check out</button></router-link>
                     </div>
                 </div>
             </div>
