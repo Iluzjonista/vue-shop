@@ -3,7 +3,7 @@
         <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
                 style="box-shadow: 0 0 2px #888888;">
             <div class="container">
-                <a class="navbar-brand" href="/">Vue online-shop</a>
+                <a class="navbar-brand" href="#/">Vue online-shop</a>
                 <span class="app-bar-divider"></span>
                 <div class="input-control text">
                     <input id='search' type="text" placeholder="Search..." v-model="filterText">
