@@ -8,7 +8,15 @@
             <p>{{ detail }}</p>
             <div>
                 <p class="price font-weight-bold">{{ price | currency }}</p>
-                <p class="stock text-right"><b>Stock:</b> {{ stock }} pcs</p></div>
+                <p class="stock text-right"><b>Stock:</b> {{ stock }} pcs</p>
+                <p class="text-right"><a class=""
+                                         v-for="(entry, index) in filterList"
+                                         :item="entry"
+                                         :key="index"
+                                         @click="filter = entry; active = index;"
+                                         :class="{ active: entry == filter }"
+                                         v-bind:href='"#" + entry'>{{ entry }}</a></p>
+            </div>
         </div>
 
         <div class="row" style="margin-top: 25px;">
@@ -49,6 +57,25 @@
         props: ['invId', 'name', 'price', 'image', 'detail', 'categories', 'stock'],
         filters: {
             currency
+        },data:
+            function () {
+                return {
+                    categories: "categories",
+                    filterList: ["Camera", "Lens", "Accessories", "All"],
+                    filter: "All",
+                    filterText: null,
+                    users: []
+                };
+            },
+        computed: {
+            forSale() {
+                if (!this.filterText)
+                    return this.$store.getters.forSale
+                let searchText = this.filterText.toLowerCase()
+                return this.$store.getters.forSale.filter(p => {
+                    return p.name.toLowerCase().includes(searchText)
+                });
+            }
         },
         methods: {
             addToCart(invId, stock) {
