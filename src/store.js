@@ -111,6 +111,9 @@ export default new Vuex.Store({
     },
     REMOVE_FROM_CART(state, index) {
       state.inCart.splice(index, 1)
+    },
+    products(state, payload){
+      state.forSale = payload;
     }
   },
   actions: {

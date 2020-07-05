@@ -15,12 +15,14 @@
     import Main from './Main.vue'
     import Cart from './Cart.vue'
     import Item from './Item.vue'
-    import ShoppingCart from './ShoppingCart.vue'
+    import Product from './Product.vue'
+    import SinglePage from './SinglePage.vue'
 
     const router = new VueRouter({
         routes: [
             {path: '/', component: Main},
             {path: '/cart', component: Cart},
+            {path: '/product/:id', component: Product},
         ]
     })
     export default {
@@ -29,7 +31,8 @@
         components: {
             Main,
             Item,
-            ShoppingCart
+            Product,
+            SinglePage,
         },
     }
 </script>
@@ -37,6 +40,10 @@
 <style>
     body {
         background-color: #f0efef;
+    }
+    .breadcrumb {
+        padding: .5rem 0 0 1rem;
+        font-size: .75rem;
     }
 
     .footer-copyright {

@@ -21,6 +21,14 @@
         </header>
         <div class='main-div--cart'>
             <div class='container' style="margin-top: 75px;">
+                <div class='breadcrumb'>
+                    <nav aria-label='breadcrumb'>
+                        <ol class='breadcrumb'>
+                            <li class='breadcrumb-item'><a href='#/'>Home</a></li>
+                            <li class='breadcrumb-item active' aria-current='page'>Cart</li>
+                        </ol>
+                    </nav>
+                </div>
                 <h2>Your Cart Items</h2>
                 <table class='table table-hover checkout'>
                     <tbody>
@@ -64,6 +72,7 @@
             inCart() {
                 return this.$store.getters.inCart
             },
+            breadcrumbs: state => state.breadcrumbs,
             numInCart() {
                 return this.inCart.length
             },

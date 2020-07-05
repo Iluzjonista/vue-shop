@@ -1,8 +1,10 @@
 <template>
     <div class="product">
-        <div class="image-container">
-            <img :src="image" :alt="name" class="img-fluid">
-        </div>
+        <a v-bind:href="'#/product/'+ invId">
+            <div class="image-container">
+                <img :src="image" :alt="name" class="img-fluid">
+            </div>
+        </a>
         <div class="cell colspan2">
             <h3 class="card-title">{{ name }}</h3>
             <p>{{ detail }}</p>
@@ -54,10 +56,10 @@
 
     export default {
         name: 'item',
-        props: ['invId', 'name', 'price', 'image', 'detail', 'categories', 'stock'],
+        props: ['invId', 'name', 'price', 'image', 'detail', 'stock'],
         filters: {
             currency
-        },data:
+        }, data:
             function () {
                 return {
                     categories: "categories",

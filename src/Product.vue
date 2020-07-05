@@ -44,17 +44,7 @@
             </div>
         </header>
         <section class="container" style="margin-top: 75px">
-
-            <div class='breadcrumb'>
-                <nav aria-label='breadcrumb'>
-                    <ol class='breadcrumb'>
-                        <li class='breadcrumb-item'><a href='#/'>Home</a></li>
-                        <li class='breadcrumb-item active' aria-current='page'>Products</li>
-                    </ol>
-                </nav>
-            </div>
-            <div class="main-div">
-                <item
+                <single-page
                         v-for="item in forSale"
                         v-if="item[categories] === filter || filter === 'All'"
                         :key="item.invId"
@@ -65,8 +55,7 @@
                         :detail="item.detail"
                         :categories="item.categories"
                         :stock="item.stock"
-                ></item>
-            </div>
+                ></single-page>
         </section>
     </div>
 </template>
@@ -76,7 +65,7 @@
     import SinglePage from './SinglePage.vue'
 
     export default {
-        name: 'main',
+        name: 'product-page',
         components: {
             Item,
             SinglePage
