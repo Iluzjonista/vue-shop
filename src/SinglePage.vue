@@ -1,5 +1,5 @@
 <template>
-    <div class="container" v-if=" this.$route.params.id==invId" >
+    <div class="container" v-if=" this.$route.params.id==invId">
         <div class='breadcrumb'>
             <nav aria-label='breadcrumb'>
                 <ol class='breadcrumb'>
@@ -16,6 +16,12 @@
             <div v-if="forSale"><h1>{{name}}</h1>
                 <p>{{invId}}a</p>
                 <h2 v-if=" this.$route.params.id==invId">{{invId}}</h2>
+                <a v-bind:href='"/#" + categories' @click="$parent.$parent.filter = categories"
+                   :class="{ active: categories == $parent.$parent.filter }">{{ categories }}</a>
+                <a v-bind:href='"/#" + categories' @click="$parent.filter = categories"
+                   :class="{ active: categories == $parent.filter }">{{ categories }}</a>
+                <a href="././" @click="$parent.filter = categories"
+                   :class="{ active: categories == $parent.filter }">{{ categories }}</a>
             </div>
         </div>
     </div>
@@ -26,7 +32,7 @@
 
     export default {
         name: 'single-page',
-        props: ['invId', 'name', 'price', 'image', 'detail', 'stock'],
+        props: ['invId', 'name', 'price', 'image', 'detail', 'stock', 'categories'],
         filters: {
             currency
         },

@@ -11,20 +11,16 @@
             <div>
                 <p class="price font-weight-bold">{{ price | currency }}</p>
                 <p class="stock text-right"><b>Stock:</b> {{ stock }} pcs</p>
-                <p class="text-right"><a class=""
-                                         v-for="(entry, index) in filterList"
-                                         :item="entry"
-                                         :key="index"
-                                         @click="filter = entry; active = index;"
-                                         :class="{ active: entry == filter }"
-                                         v-bind:href='"#" + entry'>{{ entry }}</a></p>
+                <a v-bind:href='"/#" + categories' @click="$parent.filter = categories"
+                   :class="{ active: categories == $parent.filter }">{{ categories }}</a>
+
             </div>
         </div>
 
         <div class="row" style="margin-top: 25px;">
             <div class="colors" style="margin-top: 25px;">
-                <button class="btn btn-light">
-                    Like 0
+                <button class="btn btn-light" v-on:click="count++">
+                    Like {{count}}
                 </button>
                 <div class="dropdown">
                     <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">Share <span
@@ -56,7 +52,7 @@
 
     export default {
         name: 'item',
-        props: ['invId', 'name', 'price', 'image', 'detail', 'stock'],
+        props: ['invId', 'name', 'price', 'image', 'detail', 'stock', 'categories'],
         filters: {
             currency
         }, data:
@@ -66,7 +62,7 @@
                     filterList: ["Camera", "Lens", "Accessories", "All"],
                     filter: "All",
                     filterText: null,
-                    users: []
+                    count: 0
                 };
             },
         computed: {

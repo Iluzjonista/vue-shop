@@ -65,6 +65,7 @@
                         :detail="item.detail"
                         :categories="item.categories"
                         :stock="item.stock"
+
                 ></item>
             </div>
         </section>
@@ -82,14 +83,13 @@
             SinglePage
         },
         data:
-            function () {
+            function filt() {
                 return {
                     invId: "invId",
                     categories: "categories",
                     filterList: ["Camera", "Lens", "Accessories", "All"],
                     filter: "All",
                     filterText: null,
-                    users: []
                 };
             },
         computed: {
