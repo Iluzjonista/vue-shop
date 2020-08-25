@@ -3,7 +3,7 @@
         <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
                 style="box-shadow: 0 0 2px #888888;">
             <div class="container">
-                <a class="navbar-brand" href="/">Vue online-shop</a>
+                <router-link :to="'/'"><span class="navbar-brand">Vue online-shop</span></router-link>
                 <span class="app-bar-divider"></span>
 
                 <router-link :to="'/'">

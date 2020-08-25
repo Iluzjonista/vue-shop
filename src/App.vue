@@ -10,7 +10,6 @@
 </template>
 
 <script>
-    import Vue from 'vue'
     import VueRouter from 'vue-router'
     import Main from './Main.vue'
     import Cart from './Cart.vue'
@@ -22,6 +21,7 @@
         routes: [
             {path: '/', component: Main},
             {path: '/cart', component: Cart},
+            // {path: '/product/:id', component: Main},
             {path: '/product/:id', component: Product},
         ]
     })
@@ -33,7 +33,16 @@
             Item,
             Product,
             SinglePage,
-        },
+        },data:
+            function filt() {
+                return {
+                    invId: "invId",
+                    categories: "categories",
+                    filterList: ["Camera", "Lens", "Accessories", "All"],
+                    filter: "All",
+                    filterText: null,
+                };
+            },
     }
 </script>
 

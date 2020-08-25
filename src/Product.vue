@@ -3,11 +3,8 @@
         <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
                 style="box-shadow: 0 0 2px #888888;">
             <div class="container">
-                <a class="navbar-brand" href="#/">Vue online-shop</a>
+                <router-link :to="'/'"><span class="navbar-brand">Vue online-shop</span></router-link>
                 <span class="app-bar-divider"></span>
-                <div class="input-control text">
-                    <input id='search' type="text" placeholder="Search..." v-model="filterText">
-                </div>
                 <router-link :to="'/cart'">
                     <button
                             class="btn btn-light"
@@ -20,33 +17,22 @@
                         </svg> Cart ({{ numInCart }})
                     </button>
                 </router-link>
-                <div class="dropdown show">
-                    <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                       data-toggle="dropdown">
+                <router-link :to="'/'">
+                    <div class="btn btn-light">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-tags-fill" fill="currentColor"
                              xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                   d="M3 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 7.586 1H3zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
                             <path d="M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
                         </svg>
-                        Category
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item"
-                           v-for="(entry, index) in filterList"
-                           :item="entry"
-                           :key="index"
-                           @click="filter = entry; active = index;"
-                           :class="{ active: entry == filter }"
-                           v-bind:href='"#" + entry'>{{ entry }}</a>
+                        Products
                     </div>
-                </div>
+                </router-link>
             </div>
         </header>
         <section class="container" style="margin-top: 75px">
                 <single-page
                         v-for="item in forSale"
-                        v-if="item[categories] === filter || filter === 'All'"
                         :key="item.invId"
                         :invId="item.invId"
                         :image="item.image"
@@ -71,7 +57,7 @@
             SinglePage
         },
         data:
-            function () {
+            function filt() {
                 return {
                     invId: "invId",
                     categories: "categories",

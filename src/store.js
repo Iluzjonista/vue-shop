@@ -108,6 +108,7 @@ export default new Vuex.Store({
   mutations: {
     ADD_TO_CART(state, invId, stock) {
       state.inCart.push(invId)
+      state.forSale.push(stock--)
     },
     REMOVE_FROM_CART(state, index) {
       state.inCart.splice(index, 1)

@@ -3,7 +3,9 @@
         <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
                 style="box-shadow: 0 0 2px #888888;">
             <div class="container">
-                <a class="navbar-brand" href="#/">Vue online-shop</a>
+                <router-link :to="'/'">
+                    <span @click="filter = 'All';" class="navbar-brand">Vue online-shop</span>
+                </router-link>
                 <span class="app-bar-divider"></span>
                 <div class="input-control text">
                     <input id='search' type="text" placeholder="Search..." v-model="filterText">
@@ -17,7 +19,8 @@
                              xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                   d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                        </svg> Cart ({{ numInCart }})
+                        </svg>
+                        Cart ({{ numInCart }})
                     </button>
                 </router-link>
                 <div class="dropdown show">
@@ -48,12 +51,30 @@
             <div class='breadcrumb'>
                 <nav aria-label='breadcrumb'>
                     <ol class='breadcrumb'>
-                        <li class='breadcrumb-item'><a href='#/'>Home</a></li>
+                        <li class='breadcrumb-item'>
+                            <router-link :to="'/'">
+                                <span @click="filter = 'All';">Home</span>
+                            </router-link>
+                        </li>
                         <li class='breadcrumb-item active' aria-current='page'>Products</li>
                     </ol>
                 </nav>
             </div>
-            <div class="main-div">
+            <div class="container"
+                 v-if="this.$route.params.id==invId">
+                <single-page
+                        v-for="item in forSale"
+                        :key="item.invId"
+                        :invId="item.invId"
+                        :image="item.image"
+                        :name="item.name"
+                        :price="item.price"
+                        :detail="item.detail"
+                        :categories="item.categories"
+                        :stock="item.stock"
+                ></single-page>
+            </div>
+            <div class="main-div" v-else>
                 <item
                         v-for="item in forSale"
                         v-if="item[categories] === filter || filter === 'All'"
