@@ -56,14 +56,28 @@
                                 <span @click="filter = 'All';">Home</span>
                             </router-link>
                         </li>
-                        <li class='breadcrumb-item active' aria-current='page'>Products</li>
+                        <li class='breadcrumb-item active' aria-current='page' v-if="this.$route.params.category==='Camera'">Camera</li>
+                        <li class='breadcrumb-item active' aria-current='page' v-else-if="filter === 'Camera'">Camera</li>
+                        <li class='breadcrumb-item active' aria-current='page' v-else-if="this.$route.params.category==='Lens'">Lens</li>
+                        <li class='breadcrumb-item active' aria-current='page' v-else-if="filter === 'Lens'">Lens</li>
+                        <li class='breadcrumb-item active' aria-current='page' v-else-if="this.$route.params.category==='Accessories'">Accessories</li>
+                        <li class='breadcrumb-item active' aria-current='page' v-else-if="filter === 'Accessories'">Accessories</li>
+                        <li class='breadcrumb-item active' aria-current='page' v-else>Products</li>
                     </ol>
                 </nav>
             </div>
-            <div class="container"
-                 v-if="this.$route.params.id==invId">
-                <single-page
+            <h2 class="text-center pb-2">Available products</h2>
+            <h2 class="text-center pb-2" v-if="filter === 'Camera'">Camera</h2>
+            <h2 class="text-center pb-2" v-else-if="this.$route.params.category==='Camera'">Camera</h2>
+            <h2 class="text-center pb-2" v-if="filter === 'Lens'">Lens</h2>
+            <h2 class="text-center pb-2" v-else-if="this.$route.params.category==='Lens'">Lens</h2>
+            <h2 class="text-center pb-2" v-if="filter === 'Accessories'">Accessories</h2>
+            <h2 class="text-center pb-2" v-else-if="this.$route.params.category==='Accessories'">Accessories</h2>
+            <div class="main-div"
+                 v-if="this.$route.params.category==='Camera'">
+                <item
                         v-for="item in forSale"
+                        v-if="item[categories] === 'Camera'"
                         :key="item.invId"
                         :invId="item.invId"
                         :image="item.image"
@@ -72,7 +86,37 @@
                         :detail="item.detail"
                         :categories="item.categories"
                         :stock="item.stock"
-                ></single-page>
+                ></item>
+            </div>
+            <div class="main-div"
+                 v-else-if="this.$route.params.category==='Lens'">
+                <item
+                        v-for="item in forSale"
+                        v-if="item[categories] === 'Lens'"
+                        :key="item.invId"
+                        :invId="item.invId"
+                        :image="item.image"
+                        :name="item.name"
+                        :price="item.price"
+                        :detail="item.detail"
+                        :categories="item.categories"
+                        :stock="item.stock"
+                ></item>
+            </div>
+            <div class="main-div"
+                 v-else-if="this.$route.params.category==='Accessories'">
+                <item
+                        v-for="item in forSale"
+                        v-if="item[categories] === 'Accessories'"
+                        :key="item.invId"
+                        :invId="item.invId"
+                        :image="item.image"
+                        :name="item.name"
+                        :price="item.price"
+                        :detail="item.detail"
+                        :categories="item.categories"
+                        :stock="item.stock"
+                ></item>
             </div>
             <div class="main-div" v-else>
                 <item
@@ -86,7 +130,6 @@
                         :detail="item.detail"
                         :categories="item.categories"
                         :stock="item.stock"
-
                 ></item>
             </div>
         </section>

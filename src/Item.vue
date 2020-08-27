@@ -1,7 +1,7 @@
 <template>
     <div class="product">
         <div>
-            <a v-bind:href="'#/product/'+ invId">
+            <a v-bind:href="'#/product/'+ categories +'/'+ invId">
                 <div class="image-container">
                     <img :src="image" :alt="name" class="img-fluid">
                 </div>
@@ -12,7 +12,7 @@
                 <div>
                     <p class="price font-weight-bold">{{ price | currency }}</p>
                     <p class="stock text-right"><b>Stock:</b> {{ stock }} pcs</p>
-                    <a class="btn btn-outline-dark" v-bind:href='"/#" + categories' @click="$parent.filter = categories"
+                    <a class="btn btn-outline-dark" v-bind:href='"/#/product/" + categories' @click="$parent.filter = categories"
                        :class="{ active: categories == $parent.filter }">{{ categories }}</a>
 
                 </div>

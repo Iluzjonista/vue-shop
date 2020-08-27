@@ -4,7 +4,9 @@
             <nav aria-label='breadcrumb'>
                 <ol class='breadcrumb'>
                     <li class='breadcrumb-item'><a href='#/'>Home</a></li>
-                    <li class='breadcrumb-item' aria-current='page'>Products</li>
+                    <li class='breadcrumb-item'><router-link :to="'/product/'+categories">
+                        {{ categories }}
+                    </router-link></li>
                     <li class='breadcrumb-item active' aria-current='page'>{{name}}</li>
                 </ol>
             </nav>
@@ -18,8 +20,9 @@
                 <h3>{{name}}</h3>
                 <p>{{detail}}</p>
 
-<!--                <router-link :to="'/'" @click="filter = 'Accessories'">-->
-<!--                    {{ categories }}</router-link>-->
+                <router-link class="btn btn-outline-dark" :to="'/product/'+categories">
+                    {{ categories }}
+                </router-link>
 
 <!--                <a v-bind:href='"#/" + categories' @click="$parent.filter = categories"-->
 <!--                   :class="{ active: categories == $parent.filter }">{{ categories }}</a>-->
@@ -30,7 +33,7 @@
 <!--                <a href="././" @click="$parent.filter = categories"-->
 <!--                   :class="{ active: categories == $parent.filter }">{{ categories }}</a>-->
 
-                <a class="btn btn-outline-dark" v-bind:href='"././"' @click="filter = categories">{{ categories }}</a>
+<!--                <a class="btn btn-outline-dark" v-bind:href='"././#"+categories' @click="filter = categories">{{ categories }}</a>-->
 <!--                <router-link :to="'/'">-->
 <!--                    <span @click="filter = 'Accessories';">Accessories</span>-->
 <!--                </router-link>-->
