@@ -20,7 +20,7 @@
     const router = new VueRouter({
         routes: [
             {path: '/', component: Main},
-            {path: '/product/:category', component: Main, filter: "Camera"},
+            {path: '/product/:category', component: Main},
             {path: '/cart', component: Cart},
             {path: '/product/:category/:id', component: Product},
         ]
